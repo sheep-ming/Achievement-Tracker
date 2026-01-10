@@ -1,0 +1,103 @@
+/* style.css - 통합 트래커 디자인 */
+
+/* --- 공통 --- */
+.achievement-list-container, .asset-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 2px;
+}
+
+/* --- 업적 아이템 스타일 (Achievements) --- */
+.achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 8px;
+    background-color: var(--SmartThemeBgColor);
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+}
+
+.achievement-item.unlocked {
+    background-color: rgba(255, 215, 0, 0.1); /* 금색 배경 */
+    border-color: rgba(255, 215, 0, 0.5);
+    color: var(--SmartThemeBodyColor);
+}
+
+.achievement-item.locked {
+    opacity: 0.7;
+    border-style: dashed;
+    filter: grayscale(0.8);
+}
+
+.achievement-icon {
+    font-size: 1.5em;
+    margin-right: 12px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.achievement-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-title { font-weight: bold; font-size: 0.95em; }
+.achievement-desc { font-size: 0.8em; opacity: 0.8; }
+
+
+/* --- 애셋 아이템 스타일 (Raw Assets) --- */
+.asset-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 5px;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.asset-item:hover {
+    background-color: var(--SmartThemeBlurTintColor);
+}
+
+/* 해금됨: 불투명, 진하게 */
+.asset-item.unlocked {
+    opacity: 1.0;
+    color: var(--SmartThemeBodyColor);
+    font-weight: bold;
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+/* 잠김: 반투명, 흐리게 */
+.asset-item.locked {
+    opacity: 0.5;
+    color: var(--grey70);
+    font-style: italic;
+}
+
+.asset-icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+    min-width: 25px;
+    text-align: center;
+}
+
+.asset-name {
+    flex: 1;
+    word-break: break-all;
+    font-size: 0.9em;
+}
+
+/* 클릭 가능 커서 (치트용) */
+.achievement-item.clickable, .asset-item.clickable {
+    cursor: pointer;
+}
+.achievement-item.clickable:hover, .asset-item.clickable:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
