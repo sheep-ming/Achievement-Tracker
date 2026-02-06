@@ -1,0 +1,62 @@
+<div id="achievement_tracker_settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>애셋 업적 트래커</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        
+        <div class="inline-drawer-content">
+            
+            <div style="padding: 10px 5px; border-bottom: 1px solid var(--SmartThemeBorderColor);">
+                <label class="checkbox_label" style="display: flex; align-items: center; cursor: pointer; margin-bottom: 5px;">
+                    <input id="tracker_toggle_enable" type="checkbox" checked>
+                    <span style="margin-left: 10px; font-weight: bold;">트래커 활성화</span>
+                </label>
+                <label class="checkbox_label" style="display: flex; align-items: center; cursor: pointer;">
+                    <input id="tracker_toast_enable" type="checkbox" checked>
+                    <span style="margin-left: 10px;">🔔 발견 및 달성 알림 켜기</span>
+                </label>
+            </div>
+
+            <div style="padding: 10px 5px; border-bottom: 1px solid var(--SmartThemeBorderColor); background-color: rgba(0,0,0,0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                    <span style="font-size: 0.9em; font-weight: bold;">🎉 100% 달성 메시지</span>
+                    <label class="checkbox_label" style="font-size: 0.8em; cursor: pointer;">
+                        <input id="tracker_msg_reveal" type="checkbox"> 👁️ 확인/수정
+                    </label>
+                </div>
+                
+                <div id="tracker_msg_status" style="font-size: 0.8em; color: var(--SmartThemeQuoteColor); font-style: italic; display: none;">
+                    🔒 히든 메시지가 감지되었습니다.
+                </div>
+
+                <textarea id="tracker_custom_msg_input" class="text_pole" rows="2" 
+                    placeholder="자동 감지된 메시지가 없으면 이 내용이 출력됩니다." 
+                    style="width: 100%; resize: vertical; display: none; margin-top:5px; font-size: 0.9em;"></textarea>
+            </div>
+
+            <div style="padding: 10px 5px;">
+                <div style="font-size: 0.9em; font-weight: bold; margin-bottom: 5px;">🏆 도전과제</div>
+                <div id="achievement_list_container" class="achievement-list-container" style="min-height: 30px;">
+                    <div style="text-align: center; color: gray; padding: 10px;">로딩 중...</div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed var(--SmartThemeBorderColor); margin: 5px 0;">
+
+            <div style="padding: 10px 5px;">
+                <div style="font-size: 0.9em; font-weight: bold; margin-bottom: 5px;">📦 전체 애셋 파일</div>
+                <div id="asset_list_container" class="asset-list-container" style="min-height: 50px;">
+                    <div style="text-align: center; color: gray; padding: 20px;">캐릭터를 선택해주세요.</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px; border-top: 1px solid var(--SmartThemeBorderColor); padding-top: 10px;">
+                <div id="tracker_reset_btn" class="menu_button danger_button" style="width: 100%; text-align: center; justify-content: center;">
+                    <i class="fa-solid fa-trash-can"></i> 데이터 초기화
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
